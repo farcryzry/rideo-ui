@@ -58,6 +58,7 @@
         <ul class="nav nav-sidebar">
           <li><a href="index.html">Overview</a></li>
           <li class="active"><a href="#">Video</a></li>
+          <li><a href="gallary.html">Gallary</a></li>
           <li><a href="workflow.html">Workflow</a></li>
         </ul>
         <ul class="nav nav-sidebar">
@@ -151,7 +152,7 @@
         <h1>Video Management</h1>
       </div>
       <p>
-        <button type="button" class="btn btn-sm btn-primary">Add to Collections ...</button>
+        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#addToTitleModel">Add to Title ...</button>
         <button type="button" class="btn btn-sm btn-danger">Delete</button>
       </p>
       <div class="panel panel-default">
@@ -179,7 +180,7 @@
               <td>Inception</td>
               <td>yaru</td>
               <td>Publishing</td>
-              <td><div class="btn-group"><button type="button" class="btn btn-sm btn-success">Edit...</button><button type="button" class="btn btn-sm btn-danger">Cancel</button></div></td>
+              <td><div class="btn-group"><button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#editVideoModel">Edit...</button><button type="button" class="btn btn-sm btn-danger">Delete</button></div></td>
             </tr>
             <tr>
               <td><input type="checkbox"></td>
@@ -188,7 +189,7 @@
               <td>Matrix</td>
               <td>yaru</td>
               <td>Publishing</td>
-              <td><div class="btn-group"><button type="button" class="btn btn-sm btn-success">Edit...</button><button type="button" class="btn btn-sm btn-danger">Cancel</button></div></td>
+              <td><div class="btn-group"><button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#editVideoModel">Edit...</button><button type="button" class="btn btn-sm btn-danger">Delete</button></div></td>
             </tr>
             <tr>
               <td><input type="checkbox"></td>
@@ -197,7 +198,7 @@
               <td>Brave</td>
               <td>yaru</td>
               <td>Publishing</td>
-              <td><div class="btn-group"><button type="button" class="btn btn-sm btn-success">Edit...</button><button type="button" class="btn btn-sm btn-danger">Cancel</button></div></td>
+              <td><div class="btn-group"><button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#editVideoModel">Edit...</button><button type="button" class="btn btn-sm btn-danger">Delete</button></div></td>
             </tr>
             <tr>
               <td><input type="checkbox"></td>
@@ -206,20 +207,101 @@
               <td>Avatar</td>
               <td>yaru</td>
               <td>Publishing</td>
-              <td><div class="btn-group"><button type="button" class="btn btn-sm btn-success">Edit...</button><button type="button" class="btn btn-sm btn-danger">Cancel</button></div></td>
+              <td><div class="btn-group"><button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#editVideoModel">Edit...</button><button type="button" class="btn btn-sm btn-danger">Delete</button></div></td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <div class="page-header">
-        <h1>Edit Video</h1>
+        <h1>Title Management</h1>
+      </div>
+      <p>
+        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#addToTitleModel">Create Title ...</button>
+        <button type="button" class="btn btn-sm btn-danger">Delete</button>
+      </p>
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <!--<div class="panel-heading">Panel heading</div>-->
+
+        <!-- Table -->
+        <table class="table">
+          <thead>
+            <tr>
+              <th style="width:3%"></th>
+              <th style="width:2%">#</th>
+              <th style="width:25%">Poster</th>
+              <th style="width:18%">Title</th>
+              <th style="width:10%">Video Count</th>
+              <th style="width:20%">Created Time</th>
+              <th>Operations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>1</td>
+              <td><img class="img-thumbnail" data-src="holder.js/200x100" alt="..."></td>
+              <td>Lost</td>
+              <td>52</td>
+              <td>12:00 PM 4-3-2014</td>
+              <td><div class="btn-group"><button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#addVideoModel">Add Video...</button><button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#editTitleModel">Edit...</button><button type="button" class="btn btn-sm btn-danger">Delete</button></div></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>2</td>
+              <td><img class="img-thumbnail" data-src="holder.js/200x100" alt="..."></td>
+              <td>Friends</td>
+              <td>26</td>
+              <td>12:00 PM 4-3-2014</td>
+              <td><div class="btn-group"><button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#addVideoModel">Add Video...</button><button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#editTitleModel">Edit...</button><button type="button" class="btn btn-sm btn-danger">Delete</button></div></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>3</td>
+              <td><img class="img-thumbnail" data-src="holder.js/200x100" alt="..."></td>
+              <td>Alias</td>
+              <td>30</td>
+              <td>12:00 PM 4-3-2014</td>
+              <td><div class="btn-group"><button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#addVideoModel">Add Video...</button><button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#editTitleModel">Edit...</button><button type="button" class="btn btn-sm btn-danger">Delete</button></div></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>4</td>
+              <td><img class="img-thumbnail" data-src="holder.js/200x100" alt="..."></td>
+              <td>Big Bang Theory</td>
+              <td>56</td>
+              <td>12:00 PM 4-3-2014</td>
+              <td><div class="btn-group"><button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#addVideoModel">Add Video...</button><button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#editTitleModel">Edit...</button><button type="button" class="btn btn-sm btn-danger">Delete</button></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="page-header">
+        <h1>Dialogs</h1>
       </div>
       <!-- Button trigger modal -->
-      <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-        Launch Dialog
+      <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editVideoModel">
+        Edit Video...
       </button>
-      <div id="myModal" class="modal fade">
+
+      <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addVideoModel">
+        Add Video...
+      </button>
+
+      <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addToTitleModel">
+        Add Video to Title...
+      </button>
+
+      <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editTitleModel">
+        Edit Title...
+      </button>
+
+      
+
+
+      <div id="editVideoModel" class="modal fade">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -241,8 +323,9 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <div class="col-sm-offset-2 col-sm-10">
-                    <img data-src="holder.js/500x400" alt="..." class="img-thumbnail">
+                  <label for="imgSnapshot" class="col-sm-2 control-label">Snapshot</label>
+                  <div class="col-sm-offset-3 col-sm-10">
+                    <img id="imgSnapshot" data-src="holder.js/300x200" alt="..." class="img-thumbnail">
                   </div>
                 </div>
               </form>
@@ -254,6 +337,217 @@
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
+
+      <div id="addVideoModel" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">Add Video</h4>
+            </div>
+            <div class="modal-body">
+              <form class="form-horizontal" role="form">
+                <div class="form-group">
+                  <div class="col-sm-4">
+                    <select multiple class="form-control">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-2">
+                    <div class="btn-group-vertical">
+                      <button id="btnAdd" type="button" class="btn btn-success">Add >></button>
+                      <button id="btnRemove" type="button" class="btn btn-danger">Remove <<</button>
+                    </div>
+                  </div>
+                  <div class="col-sm-offset-1 col-sm-4">
+                    <select multiple class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Confirm</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+      <div id="addToTitleModel" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">Add Video</h4>
+            </div>
+            <div class="modal-body">
+              <form class="form-horizontal" role="form">
+                <div class="form-group">
+                  <label for="lstVideo" class="col-sm-4 control-label">Videos you selected</label>
+                  <div class="col-sm-8">
+                    <ul id="lstVideo" class="list-group">
+                      <li class="list-group-item">
+                        <span class="badge">P</span>
+                        Lost 01
+                      </li>
+                      <li class="list-group-item">
+                        <span class="badge">T</span>
+                        Lost 02
+                      </li>
+                      <li class="list-group-item">
+                        <span class="badge">P</span>
+                        Lost 03
+                      </li>
+                      <li class="list-group-item">
+                        <span class="badge">P</span>
+                        Lost 04
+                      </li>
+                    </ul> 
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="btnTitle" class="col-sm-4 control-label">Choose Title</label>
+                  <div class="col-sm-8">
+                    <div class="btn-group">
+                      <button id="btnTitle" type="button" class="btn btn-default">Choose</button>
+                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Title 01</a></li>
+                        <li><a href="#">Title 02</a></li>
+                        <li><a href="#">Title 03</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Title 04</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Add</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+      <div id="editVideoModel" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">Edit Video</h4>
+            </div>
+            <div class="modal-body">
+              <form class="form-horizontal" role="form">
+                <div class="form-group">
+                  <label for="inputTitle" class="col-sm-2 control-label">Title</label>
+                  <div class="col-sm-10">
+                    <input class="form-control" id="inputTitle" placeholder="Title">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputDesc" class="col-sm-2 control-label">Description</label>
+                  <div class="col-sm-10">
+                    <textarea class="form-control" id="inputDesc" rows="3"></textarea>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="imgSnapshot" class="col-sm-2 control-label">Snapshot</label>
+                  <div class="col-sm-offset-3 col-sm-10">
+                    <img id="imgSnapshot" data-src="holder.js/300x200" alt="..." class="img-thumbnail">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Save</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+      <div id="editTitleModel" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">Edit Title</h4>
+            </div>
+            <div class="modal-body">
+              <form class="form-horizontal" role="form">
+                <div class="form-group">
+                  <label for="inputTitle" class="col-sm-2 control-label">Title</label>
+                  <div class="col-sm-10">
+                    <input class="form-control" id="inputTitle" placeholder="Title">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputDirector" class="col-sm-2 control-label">Director</label>
+                  <div class="col-sm-10">
+                    <input class="form-control" id="inputDirector" placeholder="Director">
+                  </div>
+                </div>
+                 <div class="form-group">
+                  <label for="inputActors" class="col-sm-2 control-label">Actors</label>
+                  <div class="col-sm-10">
+                    <input class="form-control" id="inputActors" placeholder="Actors">
+                  </div>
+                </div>
+                 <div class="form-group">
+                  <label for="inputRating" class="col-sm-2 control-label">Rating</label>
+                  <div class="col-sm-10">
+                    <input class="form-control" id="inputRating" placeholder="Rating">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputIntro" class="col-sm-2 control-label">Intro</label>
+                  <div class="col-sm-10">
+                    <textarea class="form-control" id="inputIntro" rows="3"></textarea>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="btnUpload" class="col-sm-2 control-label">Poster</label>
+                  <div class="col-sm-10">
+                    <button id="btnUpload" type="button" class="btn btn-success">Upload Poster...</button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="imgPoster" class="col-sm-2 control-label"></label>
+                  
+                  <div class="col-sm-offset-0 col-sm-10">
+                    <img id="imgPoster" data-src="holder.js/300x200" alt="..." class="img-thumbnail">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Save</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
 
       <div class="page-header">
         <h1>Buttons</h1>
