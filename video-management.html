@@ -217,6 +217,42 @@
               <td><span class="badge">Publishing</span></td>
               <td><div class="btn-group"><button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#editVideoModel">Edit...</button><button type="button" class="btn btn-sm btn-danger">Delete</button></div></td>
             </tr>
+             <tr>
+              <td><input type="checkbox"></td>
+              <td>5</td>
+              <td><img class="img-thumbnail" data-src="holder.js/200x100" alt="..."></td>
+              <td>Inception</td>
+              <td>yaru</td>
+              <td><span class="badge">Publishing</span></td>
+              <td><div class="btn-group"><button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#editVideoModel">Edit...</button><button type="button" class="btn btn-sm btn-danger">Delete</button></div></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>6</td>
+              <td><img class="img-thumbnail" data-src="holder.js/200x100" alt="..."></td>
+              <td>Matrix</td>
+              <td>yaru</td>
+              <td><span class="badge">Publishing</span></td>
+              <td><div class="btn-group"><button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#editVideoModel">Edit...</button><button type="button" class="btn btn-sm btn-danger">Delete</button></div></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>7</td>
+              <td><img class="img-thumbnail" data-src="holder.js/200x100" alt="..."></td>
+              <td>Brave</td>
+              <td>yaru</td>
+              <td><span class="badge">Publishing</span></td>
+              <td><div class="btn-group"><button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#editVideoModel">Edit...</button><button type="button" class="btn btn-sm btn-danger">Delete</button></div></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>8</td>
+              <td><img class="img-thumbnail" data-src="holder.js/200x100" alt="..."></td>
+              <td>Avatar</td>
+              <td>yaru</td>
+              <td><span class="badge">Publishing</span></td>
+              <td><div class="btn-group"><button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#editVideoModel">Edit...</button><button type="button" class="btn btn-sm btn-danger">Delete</button></div></td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -309,7 +345,7 @@
       <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editTitleModel">
         Edit Title...
       </button>
-
+    </div>
       
 
 
@@ -559,8 +595,6 @@
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
-
-    </div>
 
 
 <!--
@@ -876,10 +910,7 @@
     $(function(){
       $('.subPage').hide();
 
-      $('.nav-sidebar ul li').click(function(){
-          var element_id = $(this).attr('target');
-          $(element_id).show();
-      });
+      $('#pageVideoManagement').show();
     });
   </script>
 </body>

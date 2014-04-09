@@ -55,28 +55,35 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview</a></li>
-            <li><a href="video.html">Video</a></li>
-            <li><a href="gallary.html">Gallary</a></li>
-            <li><a href="workflow.html">Workflow</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="">rKnow</a></li>
-            <li><a href="">rShop</a></li>
-            <li><a href="">rKit</a></li>
-            <li><a href="">Preview</a></li>
-          </ul>
-        </div>
+        <ul class="nav nav-sidebar">
+          <li class="active"><a href="index.html"><span class="glyphicon glyphicon-star"></span> Overview</a></li>
+          <li><a href="#" data-toggle="collapse" data-target=".nav-collapse"><span class="glyphicon glyphicon-wrench"></span> Management <b class="caret"></b></a><div class="nav-collapse collapse well">
+            <ul class="nav">
+              <li><a href="upload.html"><span class="glyphicon glyphicon-cloud-upload"></span> Upload Video</a></li>
+              <li><a href="title-management.html"><span class="glyphicon glyphicon-th-list"></span> Title Management</a></li>
+              <li><a href="video-management.html"><span class="glyphicon glyphicon-film"></span> Video Management</a></li>
+            </ul>
+          </div></li>
+          <li><a href="gallary.html"><span class="glyphicon glyphicon-th-large"></span> Videos</a></li>
+          <li><a href="workflow.html"><span class="glyphicon glyphicon-tasks"></span> Workflow</a></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+          <li><a href="">rKnow</a></li>
+          <li><a href="">rShop</a></li>
+          <li><a href="">rKit</a></li>
+          <li><a href="">Preview</a></li>
+        </ul>
+      </div>
+
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
                 <!-- Main jumbotron for a primary marketing message or call to action -->
           <div class="jumbotron">
             <h1>Rideo Studio Dashboard</h1>
             <p>What you can do in our dashboard?</p>
-            <p><a href="#" class="btn btn-primary btn-lg" role="button">Upload Video &raquo;</a>
-              <a href="#" class="btn btn-primary btn-lg" role="button">Video Gallary &raquo;</a>
-              <a href="#" class="btn btn-primary btn-lg" role="button">Monitor Workflow &raquo;</a>
+            <p><a href="upload.html" class="btn btn-primary btn-lg" role="button">Upload Video &raquo;</a>
+              <a href="gallary.html" class="btn btn-primary btn-lg" role="button">Video Gallary &raquo;</a>
+              <a href="workflow" class="btn btn-primary btn-lg" role="button">Monitor Workflow &raquo;</a>
               <a href="#" class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
           </div>
 
