@@ -8,7 +8,7 @@
   <meta name="author" content="">
   <link rel="shortcut icon" href="ico/favicon.ico">
 
-  <title>Dashboard Template for Bootstrap</title>
+  <title>Rideo - Upload</title>
 
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -41,8 +41,7 @@
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Logout</a></li>
+            <li><a href="#" lang-key="nav-logout">Logout</a></li>
         </ul>
         <form class="navbar-form navbar-right">
           <input type="text" class="form-control" placeholder="Search...">
@@ -53,27 +52,27 @@
   </div>
 
   <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-3 col-md-2 sidebar">
-        <ul class="nav nav-sidebar">
-          <li><a href="index.html"><span class="glyphicon glyphicon-star"></span> Overview</a></li>
-          <li class="active"><a href="#" data-toggle="collapse" data-target=".nav-collapse"><span class="glyphicon glyphicon-wrench"></span> Management <b class="caret"></b></a><div class="nav-collapse collapse well">
-            <ul class="nav">
-              <li><a href="upload.html"><span class="glyphicon glyphicon-cloud-upload"></span> Upload Video</a></li>
-              <li><a href="title-management.html"><span class="glyphicon glyphicon-th-list"></span> Title Management</a></li>
-              <li><a href="video-management.html"><span class="glyphicon glyphicon-film"></span> Video Management</a></li>
-            </ul>
+  <div class="row">
+  <div class="col-sm-3 col-md-2 sidebar">
+      <ul class="nav nav-sidebar">
+          <li><a href="index.html"><span class="glyphicon glyphicon-star" lang-key="nav-overview"> Overview</span></a></li>
+          <li class="active"><a href="#" data-toggle="collapse" data-target=".nav-collapse"><span class="glyphicon glyphicon-wrench" lang-key="nav-management"> Management</span><b class="caret"></b></a><div class="nav-collapse collapse well">
+              <ul class="nav">
+                  <li><a href="upload.html"><span class="glyphicon glyphicon-cloud-upload" lang-key="nav-upload-video"> Upload Video</span></a></li>
+                  <li><a href="title-management.html"><span class="glyphicon glyphicon-th-list"lang-key="nav-title-management"> Title Management</span></a></li>
+                  <li><a href="video-management.html"><span class="glyphicon glyphicon-film" lang-key="nav-video-management"> Video Management</span></a></li>
+              </ul>
           </div></li>
-          <li><a href="gallary.html"><span class="glyphicon glyphicon-th-large"></span> Videos</a></li>
-          <li><a href="workflow.html"><span class="glyphicon glyphicon-tasks"></span> Workflow</a></li>
-        </ul>
-        <ul class="nav nav-sidebar">
+          <li><a href="gallery.html"><span class="glyphicon glyphicon-th-large" lang-key="nav-gallery"> Videos</span></a></li>
+          <li><a href="workflow.html"><span class="glyphicon glyphicon-tasks" lang-key="nav-workflow"> Workflow</span></a></li>
+      </ul>
+      <ul class="nav nav-sidebar">
           <li><a href="">rKnow</a></li>
           <li><a href="">rShop</a></li>
           <li><a href="">rKit</a></li>
           <li><a href="">Preview</a></li>
-        </ul>
-      </div>
+      </ul>
+  </div>
 
 
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -109,8 +108,8 @@
               </div></td>
               <td><button type="button" class="btn btn-sm btn-danger">Cancel</button></td>
               <td><div class="input-group input-group-sm">
-                <span class="input-group-addon">Title</span>
-                <input type="text" class="form-control" placeholder="Title">
+                <span class="input-group-addon">Video Name</span>
+                <input type="text" class="form-control" placeholder="Video Name">
               </div></td>
               <td><button type="button" class="btn btn-sm btn-success">Save</button></td>
             </tr>
@@ -121,8 +120,8 @@
                 <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">40%</div>
               </div></td><td><button type="button" class="btn btn-sm btn-danger">Cancel</button></td>
               <td><div class="input-group input-group-sm">
-                <span class="input-group-addon">Title</span>
-                <input type="text" class="form-control" placeholder="Title">
+                <span class="input-group-addon">Video Name</span>
+                <input type="text" class="form-control" placeholder="Video Name">
               </div></td>
               <td><button type="button" class="btn btn-sm btn-success">Save</button></td>
             </tr>
@@ -133,8 +132,8 @@
                 <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">60%</div>
               </div></td><td><button type="button" class="btn btn-sm btn-danger">Cancel</button></td>
               <td><div class="input-group input-group-sm">
-                <span class="input-group-addon">Title</span>
-                <input type="text" class="form-control" placeholder="Title">
+                <span class="input-group-addon">Video Name</span>
+                <input type="text" class="form-control" placeholder="Video Name">
               </div></td>
               <td><button type="button" class="btn btn-sm btn-success">Save</button></td>
             </tr>
@@ -145,57 +144,57 @@
                 <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">90%</div>
               </div></td><td><button type="button" class="btn btn-sm btn-danger">Cancel</button></td>
               <td><div class="input-group input-group-sm">
-                <span class="input-group-addon">Title</span>
-                <input type="text" class="form-control" placeholder="Title">
+                <span class="input-group-addon">Video Name</span>
+                <input type="text" class="form-control" placeholder="Video Name">
               </div></td>
               <td><button type="button" class="btn btn-sm btn-success">Save</button></td>
             </tr>
             <tr>
               <td style="width:5%"><input type="checkbox"></td>
-              <td style="width:10%">5. Inception</td>
+              <td style="width:10%">5. Source Code</td>
               <td style="width:50%"><div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">20%</div>
               </div></td>
               <td><button type="button" class="btn btn-sm btn-danger">Cancel</button></td>
               <td><div class="input-group input-group-sm">
-                <span class="input-group-addon">Title</span>
-                <input type="text" class="form-control" placeholder="Title">
+                <span class="input-group-addon">Video Name</span>
+                <input type="text" class="form-control" placeholder="Video Name">
               </div></td>
               <td><button type="button" class="btn btn-sm btn-success">Save</button></td>
             </tr>
             <tr>
               <td><input type="checkbox"></td>
-              <td>6. Matrix</td>
+              <td>6. Matrix 2</td>
               <td><div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">40%</div>
               </div></td><td><button type="button" class="btn btn-sm btn-danger">Cancel</button></td>
               <td><div class="input-group input-group-sm">
-                <span class="input-group-addon">Title</span>
-                <input type="text" class="form-control" placeholder="Title">
+                <span class="input-group-addon">Video Name</span>
+                <input type="text" class="form-control" placeholder="Video Name">
               </div></td>
               <td><button type="button" class="btn btn-sm btn-success">Save</button></td>
             </tr>
             <tr>
               <td><input type="checkbox"></td>
-              <td>7. Brave</td>
+              <td>7. The Walking Dead S1 - 1</td>
               <td><div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">60%</div>
               </div></td><td><button type="button" class="btn btn-sm btn-danger">Cancel</button></td>
               <td><div class="input-group input-group-sm">
-                <span class="input-group-addon">Title</span>
-                <input type="text" class="form-control" placeholder="Title">
+                <span class="input-group-addon">Video Name</span>
+                <input type="text" class="form-control" placeholder="Video Name">
               </div></td>
               <td><button type="button" class="btn btn-sm btn-success">Save</button></td>
             </tr>
             <tr>
               <td><input type="checkbox"></td>
-              <td>8. Avatar</td>
+              <td>8. The Walking Dead S1 - 2</td>
               <td><div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">90%</div>
               </div></td><td><button type="button" class="btn btn-sm btn-danger">Cancel</button></td>
               <td><div class="input-group input-group-sm">
-                <span class="input-group-addon">Title</span>
-                <input type="text" class="form-control" placeholder="Title">
+                <span class="input-group-addon">Video Name</span>
+                <input type="text" class="form-control" placeholder="Video Name">
               </div></td>
               <td><button type="button" class="btn btn-sm btn-success">Save</button></td>
             </tr>
@@ -921,6 +920,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/docs.min.js"></script>
+  <script src="js/lang.js"></script>
   <script type="text/javascript">
     $(function(){
       $('.subPage').hide();
