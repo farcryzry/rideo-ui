@@ -60,7 +60,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
  * @author jdmr
  */
 @Controller
-@RequestMapping
+@RequestMapping("/image")
 @Import(PropertyPlaceholderConfig.class)
 public class ImageController {
     
@@ -74,7 +74,7 @@ public class ImageController {
     @RequestMapping
     public String index() {
         log.debug("ImageController home");
-        return "image/index";
+        return "/image/index";
     }
     
     @RequestMapping(value = "/upload", method = RequestMethod.GET)
