@@ -23,11 +23,8 @@
  */
 package org.davidmendoza.fileUpload.web;
 
-import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -36,15 +33,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.io.IOUtils;
 import org.davidmendoza.fileUpload.config.PropertyPlaceholderConfig;
-import org.davidmendoza.fileUpload.dao.ImageDao;
-import org.davidmendoza.fileUpload.model.Image;
-import org.imgscalr.Scalr;
+import org.davidmendoza.fileUpload.dao.VideoDao;
+import org.davidmendoza.fileUpload.model.Video;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,33 +57,32 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
  * @author jdmr
  */
 @Controller
-@RequestMapping("/image")
+@RequestMapping("/video")
 @Import(PropertyPlaceholderConfig.class)
-public class ImageController {
+public class VideoController {
 
 	private static final Logger log = LoggerFactory
-			.getLogger(ImageController.class);
+			.getLogger(VideoController.class);
 
 	@Autowired
-	private ImageDao imageDao;
+	private VideoDao videoDao;
+	
 	@Value("${file.upload.directory}")
 	private String fileUploadDirectory;
 
 	@RequestMapping
 	public String index() {
-		log.debug("ImageController home");
-		return "/image/index";
+		log.debug("VideoController home");
+		return "/video/index";
 	}
 
 	@RequestMapping(value = "/upload", method = RequestMethod.GET)
 	public @ResponseBody Map list() {
 		log.debug("uploadGet called");
-		List<Image> list = imageDao.list();
-		for (Image image : list) {
-			image.setUrl("/image/picture/" + image.getId());
-			image.setThumbnailUrl("/image/thumbnail/" + image.getId());
-			image.setDeleteUrl("/image/delete/" + image.getId());
-			image.setDeleteType("DELETE");
+		List<Video> list = videoDao.list();
+		for (Video video : list) {
+			video.setDeleteUrl("/video/delete/" + video.getId());
+			video.setDeleteType("DELETE");
 		}
 		Map<String, Object> files = new HashMap<>();
 		files.put("files", list);
@@ -107,10 +100,10 @@ public class ImageController {
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
 	public @ResponseBody Map upload(MultipartHttpServletRequest request,
 			HttpServletResponse response) {
-		log.debug("uploadPost called");
+		log.debug("upload Post called");
 		Iterator<String> itr = request.getFileNames();
 		MultipartFile mpf;
-		List<Image> list = new LinkedList<>();
+		List<Video> list = new LinkedList<>();
 
 		while (itr.hasNext()) {
 			mpf = request.getFile(itr.next());
@@ -127,28 +120,17 @@ public class ImageController {
 			try {
 				mpf.transferTo(newFile);
 
-				BufferedImage thumbnail = Scalr.resize(ImageIO.read(newFile),
-						290);
-				String thumbnailFilename = newFilenameBase + "-thumbnail.png";
-				File thumbnailFile = new File(storageDirectory + "/"
-						+ thumbnailFilename);
-				ImageIO.write(thumbnail, "png", thumbnailFile);
+				Video video = new Video();
+				video.setName(mpf.getOriginalFilename());
+				video.setNewFilename(newFilename);
+				video.setContentType(contentType);
+				video.setSize(mpf.getSize());
+				video = videoDao.create(video);
 
-				Image image = new Image();
-				image.setName(mpf.getOriginalFilename());
-				image.setThumbnailFilename(thumbnailFilename);
-				image.setNewFilename(newFilename);
-				image.setContentType(contentType);
-				image.setSize(mpf.getSize());
-				image.setThumbnailSize(thumbnailFile.length());
-				image = imageDao.create(image);
+				video.setDeleteUrl("/video/delete/" + video.getId());
+				video.setDeleteType("DELETE");
 
-				image.setUrl("/image/picture/" + image.getId());
-				image.setThumbnailUrl("/image/thumbnail/" + image.getId());
-				image.setDeleteUrl("/image/delete/" + image.getId());
-				image.setDeleteType("DELETE");
-
-				list.add(image);
+				list.add(video);
 
 			} catch (IOException e) {
 				log.error("Could not upload file " + mpf.getOriginalFilename(),
@@ -162,49 +144,14 @@ public class ImageController {
 		return files;
 	}
 
-	@RequestMapping(value = "/picture/{id}", method = RequestMethod.GET)
-	public void picture(HttpServletRequest request,
-			HttpServletResponse response, @PathVariable Long id) {
-
-		Image image = imageDao.get(id);
-		File imageFile = new File(getRealPath(request) + "/"
-				+ image.getNewFilename());
-		response.setContentType(image.getContentType());
-		response.setContentLength(image.getSize().intValue());
-		try {
-			InputStream is = new FileInputStream(imageFile);
-			IOUtils.copy(is, response.getOutputStream());
-		} catch (IOException e) {
-			log.error("Could not show picture " + id, e);
-		}
-	}
-
-	@RequestMapping(value = "/thumbnail/{id}", method = RequestMethod.GET)
-	public void thumbnail(HttpServletRequest request,
-			HttpServletResponse response, @PathVariable Long id) {
-		Image image = imageDao.get(id);
-		File imageFile = new File(getRealPath(request) + "/"
-				+ image.getThumbnailFilename());
-		response.setContentType(image.getContentType());
-		response.setContentLength(image.getThumbnailSize().intValue());
-		try {
-			InputStream is = new FileInputStream(imageFile);
-			IOUtils.copy(is, response.getOutputStream());
-		} catch (IOException e) {
-			log.error("Could not show thumbnail " + id, e);
-		}
-	}
-
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
 	public @ResponseBody List delete(HttpServletRequest request, @PathVariable Long id) {
-		Image image = imageDao.get(id);
-		File imageFile = new File(getRealPath(request) + "/"
-				+ image.getNewFilename());
-		imageFile.delete();
-		File thumbnailFile = new File(getRealPath(request) + "/"
-				+ image.getThumbnailFilename());
-		thumbnailFile.delete();
-		imageDao.delete(image);
+		Video video = videoDao.get(id);
+		File videoFile = new File(getRealPath(request) + "/"
+				+ video.getNewFilename());
+		videoFile.delete();
+
+		videoDao.delete(video);
 		List<Map<String, Object>> results = new ArrayList<>();
 		Map<String, Object> success = new HashMap<>();
 		success.put("success", true);
