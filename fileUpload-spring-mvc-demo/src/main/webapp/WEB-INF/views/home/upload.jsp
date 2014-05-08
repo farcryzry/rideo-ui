@@ -95,7 +95,7 @@
               <h1>Upload Videos</h1>
             </div>
 
-            <div class="container" style="padding-left:0px">
+            <div class="container" style="padding-left:0px;width:auto;">
 
               <!-- The file upload form used as target for the file upload widget -->
               <form id="fileupload" action='<s:url value="/video/upload"/>' method="POST" enctype="multipart/form-data">
@@ -107,7 +107,7 @@
                           <!-- The fileinput-button span is used to style the file input field as button -->
                           <span class="btn btn-success fileinput-button">
                               <i class="glyphicon glyphicon-plus"></i>
-                              <span>Add files...</span>
+                              <span>Add Videos...</span>
                               <input type="file" name="files[]" multiple>
                           </span>
                           <button type="submit" class="btn btn-primary start">
@@ -137,7 +137,9 @@
                       </div>
                   </div>
                   <!-- The table listing the files available for upload/download -->
-                  <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
+                  
+                  	<table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
+                  
               </form>
           </div>
       
@@ -145,9 +147,9 @@
           <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-filter=":even">
               <div class="slides"></div>
               <h3 class="title"></h3>
-              <a class="prev">‹</a>
-              <a class="next">›</a>
-              <a class="close">×</a>
+              <a class="prev">&lt;&lt;</a>
+              <a class="next">&gt;&gt;</a>
+              <a class="close">X</a>
               <a class="play-pause"></a>
               <ol class="indicator"></ol>
           </div>
@@ -174,18 +176,18 @@
 <script id="template-upload" type="text/x-tmpl">
 {% for (var i=0, file; file=o.files[i]; i++) { %}
     <tr class="template-upload fade">
-        <td>
+        <td style="width:5%">
             <span class="preview"></span>
         </td>
-        <td>
+        <td style="width:20%">
             <p class="name">{%=file.name%}</p>
             <strong class="error text-danger"></strong>
         </td>
-        <td>
-            <p class="size">Processing...</p>
+		<td style="width:40%">
+			<p class="size">Processing...</p>
             <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:0%;"></div></div>
         </td>
-        <td>
+        <td style="width:20%">
             {% if (!i && !o.options.autoUpload) { %}
                 <button class="btn btn-primary start">
                     <i class="glyphicon glyphicon-upload"></i>
@@ -206,14 +208,14 @@
 <script id="template-download" type="text/x-tmpl">
 {% for (var i=0, file; file=o.files[i]; i++) { %}
     <tr class="template-download fade">
-        <td>
+        <td style="width:5%">
             <span class="preview">
                 {% if (file.thumbnailUrl) { %}
                     <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery><img src="{%=file.thumbnailUrl%}"></a>
                 {% } %}
             </span>
         </td>
-        <td>
+        <td style="width:20%">
             <p class="name">
                 {% if (file.url) { %}
                     <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
@@ -225,10 +227,10 @@
                 <div><span class="label label-danger">Error</span> {%=file.error%}</div>
             {% } %}
         </td>
-        <td>
+        <td style="width:40%">
             <span class="size">{%=o.formatFileSize(file.size)%}</span>
         </td>
-        <td>
+        <td style="width:20%">
             {% if (file.deleteUrl) { %}
                 <button class="btn btn-danger delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
                     <i class="glyphicon glyphicon-trash"></i>
@@ -275,7 +277,7 @@
 <!-- The File Upload user interface plugin -->
 <script src="js/jquery.fileupload-ui.js"></script>
 <!-- The main application script -->
-<script src="js/main.js"></script>
+<script src="js/main-video.js"></script>
 <!-- The XDomainRequest Transport is included for cross-domain file deletion for IE 8 and IE 9 -->
 <!--[if (gte IE 8)&(lt IE 10)]>
 <script src="js/cors/jquery.xdr-transport.js"></script>
