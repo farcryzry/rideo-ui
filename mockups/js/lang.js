@@ -19,6 +19,23 @@ lang_dict['ch'] = {
     "nav-logout" : "注销"
 };
 
+lang_dict['en'] = {
+    "choose-task" : "Select Task>>",
+    "upload-video" : "Upload Video>>",
+    "video-gallery" : "View Gallery>>",
+    "monitor-workflow" : "Workflow Monitor>>",
+    "learn-more" : "Learn More>>",
+    "rideo-studio-dashboard" : "Rideo Studio",
+    "nav-overview" : " Overview",
+    "nav-management" : " Manage",
+    "nav-upload-video" : " Uplaod",
+    "nav-title-management" : " Title",
+    "nav-video-management" : " Video",
+    "nav-gallery" : " Gallery",
+    "nav-workflow" : " Workflow",
+    "nav-logout" : "Logout"
+};
+
 $.fn.changeLanguage = function(lang) {
     var key = this.attr('lang-key');
     if (key != null && key != undefined) {
@@ -30,6 +47,6 @@ $.fn.changeLanguage = function(lang) {
 
 $(function(){
     $('*').each(function(){
-        $(this).changeLanguage('ch');
+        $(this).changeLanguage('en');
     });
 });
